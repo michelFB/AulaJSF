@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:p="http://primefaces.org/ui">
+  <h:head>
+    <title>LISTA DADOS JSF</title>
+  </h:head>
+  <h:body>
+  <h:form>
+  <h:commandButton value ="ADICIONAR" update="@form" action ="/InserirDados.xhtml"/>
+<h:commandButton value ="LISTAR" update="@form" action ="/ListaDados.xhtml"/>
+<h:commandButton value ="ALTERAR" update="@form" action ="/AlteraDados.xhtml"/>
+<h:commandButton value ="EXCLUIR" update="@form" action ="/Deletar.xhtml"/>
+<br />
+<br />
+<br />
+  <p:dataTable var="listaVar" value="#{uSUARIOCONTROLLER.listagem}" paginator="true" rows="10">
+  <p:column headerText="Codigo">
+    <h:outputText value="#{listaVar.codigo}"/>
+  </p:column>
+  <p:column sortBy="#{listaVar.login}" headerText="Ordenado" >
+    <h:outputText value="#{listaVar.login}"/>
+  </p:column>
+  <p:column headerText="Senha">
+    <h:outputText value="#{listaVar.senha}"/>
+  </p:column>
+  </p:dataTable>
+  </h:form>
+  </h:body>
+</html>

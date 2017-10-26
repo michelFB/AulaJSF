@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:p="http://primefaces.org/ui"
+     xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>DELETAR DADOS</title>
+</h:head>
+<body>
+<h:form >
+<h:commandButton value ="ADICIONAR" update="@form" action ="/InserirDados.xhtml"/>
+<h:commandButton value ="LISTAR" update="@form" action ="/ListaDados.xhtml"/>
+<h:commandButton value ="ALTERAR" update="@form" action ="/AlteraDados.xhtml"/>
+<h:commandButton value ="EXCLUIR" update="@form" action ="/Deletar.xhtml"/>
+<br />
+<br />
+<br />
+<p:panelGrid id="cadastrar" columns="2">
+	<h:outputText value="Codigo :" />
+	<p:inputText value="#{uSUARIOCONTROLLER.usuario.codigo}">
+	</p:inputText>
+	<p:commandButton value="Deletar" 	update="@form" action="#{uSUARIOCONTROLLER.apagarUsuario()}" />
+	<p:commandButton value="Deletar Todos" 	update="@form" action="#{uSUARIOCONTROLLER.apagartodosUsuario()}" />			
+</p:panelGrid>
+
+
+</h:form>
+</body>
+</html>
